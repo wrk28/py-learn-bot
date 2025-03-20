@@ -1,0 +1,12 @@
+[
+    {"model": "word", "fields": {"word_id": 1, "ru_meaning": "ты", "en_meaning": "you", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 2, "ru_meaning": "я", "en_meaning": "I", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 3, "ru_meaning": "он", "en_meaning": "he", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 4, "ru_meaning": "она", "en_meaning": "she", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 5, "ru_meaning": "мы", "en_meaning": "we", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 6, "ru_meaning": "они", "en_meaning": "they", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 7, "ru_meaning": "голубой", "en_meaning": "blue", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 8, "ru_meaning": "красный", "en_meaning": "red", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 9, "ru_meaning": "зелёный", "en_meaning": "green", "is_general": 1}},
+    {"model": "word", "fields": {"word_id": 10, "ru_meaning": "жёлтый", "en_meaning": "yellow", "is_general": 1}}
+]

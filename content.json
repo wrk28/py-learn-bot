@@ -1,0 +1,19 @@
+{
+    "add_word": "Добавить слово",
+    "remove_word": "Удалить слово",
+    "next_word": "Следующее слово",
+    "greeting": "Здравствуйте, {name}! Давайте отгадывать слова!",
+    "guess_word": "Как сказать: {word}",
+    "correct": "Правильно, попробуйте другое слово",
+    "not_correct": "Попробуйте ещё раз",
+    "add_word_request": "Напишите слово и его перевод. Например:\n{add_word_example}",
+    "add_word_example": "слово word",
+    "add_word_success": "Успешно добавлено, вы изучаете {words_number}",
+    "remove_word_request": "Напишите слово, которое хотите удалить. Например:\n{remove_word_example}",
+    "remove_word_example": "учить",
+    "remove_word_success": "Успешно удалено",
+    "remove_word_absent": "Слово отсутсвует",
+    "try_again": "Попробуйте ещё раз",
+    "bot_running": "The bot is running",
+    "bot_stopped": "The bot is stopped because of the exception:"
+}
