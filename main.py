@@ -14,9 +14,17 @@ class EnvReader:
         if path:
             dotenv_path = path
         else:
-            dotenv_path = os.path.dirname(__file__)
+            dotenv_path = os.path.join(os.getcwd(), '.env')
         dotenv.load_dotenv(dotenv_path)
-        self.DSN = os.getenv("DSN")
+
+        driver = os.getenv("DB_DRIVER")
+        user = os.getenv("DB_USER")
+        password = os.getenv("DB_PASSWORD")
+        host = os.getenv("DB_HOST")
+        port = os.getenv("DB_PORT")
+        database = os.getenv("DB_DATABASE_NAME")
+        
+        self.DSN = f'{driver}://{user}:{password}@{host}:{port}/{database}'
         self.token = os.getenv("TOKEN")
         self.remove_tables = os.getenv('REMOVE_TABLES').lower().strip() in ('true', 't', 'yes', 'y', '1',)
         self.create_db = os.getenv('CREATE_DB').lower().strip() in ('true', 't', 'yes', 'y', '1',)
@@ -188,13 +196,12 @@ if __name__ == "__main__":
     bot = TeleBot(env_reader.token, state_storage=state_storage)
     engine = sq.create_engine(env_reader.DSN)
     db = DBUtils(engine)
-    handlers = []
     user_sate = dict()
+    handlers = create_handlers(db, user_sate)
     try:
         DBUtils.make_database(engine=engine, remove_tables=env_reader.remove_tables, create_db=env_reader.create_db)
         if env_reader.fill_data:
             db.fill_data(env_reader.data_file_path)
-        handlers = create_handlers(db, user_sate)
         print(Content.BOT_RUNNING)
         bot.polling()
     except Exception as e:
